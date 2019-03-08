@@ -76,15 +76,13 @@ javascript_kno = 1
 
 django_kno = 3
 flask_kno = 2
-dash_kno = 1
+dash_kno = 2
 libgdx_kno = 4
 materialize_kno = 7
 
 lang_kno_y = [python_kno, java_kno, html_kno, css_kno, javascript_kno]
 
-
 fram_kno_y = [django_kno, flask_kno, dash_kno, libgdx_kno, materialize_kno]
-
 
 app.layout = html.Div(children=[
     html.H1('Luke Lopez\'s Expertise', style={'textAlign': 'center'}),
@@ -108,6 +106,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=python_color
                           ),
+                          legendgroup="languages",
                       ),
                       go.Bar(
                           x=[languages_list[1]],
@@ -116,6 +115,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=java_color
                           ),
+                          legendgroup="languages",
                       ),
                       go.Bar(
                           x=[languages_list[2]],
@@ -124,6 +124,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=html_color
                           ),
+                          legendgroup="languages",
                       ),
                       go.Bar(
                           x=[languages_list[3]],
@@ -132,6 +133,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=css_color
                           ),
+                          legendgroup="languages",
                       ),
                       go.Bar(
                           x=[languages_list[4]],
@@ -140,6 +142,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=javascript_color
                           ),
+                          legendgroup="languages",
                       ),
                       # Frameworks
                       go.Bar(
@@ -147,8 +150,10 @@ app.layout = html.Div(children=[
                           y=[django_kno],
                           name='Django',
                           marker=go.bar.Marker(
-                              color='rgb(58, 128, 2)'
+                              color='rgb(58, 70, 2)'
                           ),
+                          legendgroup="frameworks",
+                          width=0.5,
                       ),
                       go.Bar(
                           x=[languages_list[0]],
@@ -157,14 +162,18 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(58, 7, 2)'
                           ),
+                          legendgroup="frameworks",
+                          width=0.5,
                       ),
                       go.Bar(
                           x=[languages_list[0]],
                           y=[dash_kno],
                           name='Dash',
                           marker=go.bar.Marker(
-                              color='rgb(58, 7, 2)'
+                              color='rgb(58, 7, 120)'
                           ),
+                          legendgroup="frameworks",
+                          width=0.5,
                       ),
                       go.Bar(
                           x=[languages_list[1]],
@@ -173,6 +182,8 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(58, 128, 2)'
                           ),
+                          legendgroup="frameworks",
+                          width=0.5,
                       ),
                       go.Bar(
                           x=[languages_list[3]],
@@ -181,10 +192,16 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(58, 128, 2)'
                           ),
+                          legendgroup="frameworks",
+                          width=0.5,
                       ),
                   ],
                   layout=go.Layout(
-                      barmode='stack'
+                      barmode='stack',
+                      legend=dict(
+                          traceorder='grouped',
+                          tracegroupgap=50,
+                      )
                   )
               )
               ),
