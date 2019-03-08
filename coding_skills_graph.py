@@ -100,13 +100,45 @@ app.layout = html.Div(children=[
     dcc.Graph(id='graph',
               figure=go.Figure(
                   data=[
-                      # Language
+                      # Languages
                       go.Bar(
                           x=[languages_list[0]],
                           y=[python_kno],
                           name='Python',
                           marker=go.bar.Marker(
                               color=python_color
+                          ),
+                      ),
+                      go.Bar(
+                          x=[languages_list[1]],
+                          y=[java_kno],
+                          name='Java',
+                          marker=go.bar.Marker(
+                              color=java_color
+                          ),
+                      ),
+                      go.Bar(
+                          x=[languages_list[2]],
+                          y=[html_kno],
+                          name='HTML',
+                          marker=go.bar.Marker(
+                              color=html_color
+                          ),
+                      ),
+                      go.Bar(
+                          x=[languages_list[3]],
+                          y=[css_kno],
+                          name='CSS',
+                          marker=go.bar.Marker(
+                              color=css_color
+                          ),
+                      ),
+                      go.Bar(
+                          x=[languages_list[4]],
+                          y=[javascript_kno],
+                          name='JavaScript',
+                          marker=go.bar.Marker(
+                              color=javascript_color
                           ),
                       ),
                       # Frameworks
@@ -134,16 +166,6 @@ app.layout = html.Div(children=[
                               color='rgb(58, 7, 2)'
                           ),
                       ),
-                      # Language
-                      go.Bar(
-                          x=[languages_list[1]],
-                          y=[java_kno],
-                          name='Java',
-                          marker=go.bar.Marker(
-                              color=java_color
-                          ),
-                      ),
-                      # Frameworks
                       go.Bar(
                           x=[languages_list[1]],
                           y=[libgdx_kno],
@@ -152,25 +174,6 @@ app.layout = html.Div(children=[
                               color='rgb(58, 128, 2)'
                           ),
                       ),
-                      # Language
-                      go.Bar(
-                          x=[languages_list[2]],
-                          y=[html_kno],
-                          name='HTML',
-                          marker=go.bar.Marker(
-                              color=html_color
-                          ),
-                      ),
-                      # Language
-                      go.Bar(
-                          x=[languages_list[3]],
-                          y=[css_kno],
-                          name='CSS',
-                          marker=go.bar.Marker(
-                              color=css_color
-                          ),
-                      ),
-                      # Frameworks
                       go.Bar(
                           x=[languages_list[3]],
                           y=[materialize_kno],
@@ -179,16 +182,6 @@ app.layout = html.Div(children=[
                               color='rgb(58, 128, 2)'
                           ),
                       ),
-                      # Language
-                      go.Bar(
-                          x=[languages_list[4]],
-                          y=[javascript_kno],
-                          name='JavaScript',
-                          marker=go.bar.Marker(
-                              color=javascript_color
-                          ),
-                      ),
-
                   ],
                   layout=go.Layout(
                       barmode='stack'
