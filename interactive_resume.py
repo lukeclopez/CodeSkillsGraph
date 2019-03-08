@@ -84,17 +84,41 @@ lang_kno_y = [python_kno, java_kno, html_kno, css_kno, javascript_kno]
 
 fram_kno_y = [django_kno, flask_kno, dash_kno, libgdx_kno, materialize_kno]
 
+resume_body = \
+    r'''
+[Github](https://github.com/bridsoukou)
+
+* Focused, driven, and eager to take on a challenge.  
+* Looking to turn my passion for coding into a career.   
+* Making complicated ideas understandable is my superpower.   
+
+## Experience
+***
+#### Private Tutor
+2015 - Present
+ 
+##### Subjects:
+Python, Chess, Spanish, English
+ 
+##### Achievements:
+
+Proposed and piloted group classes for the company \
+in 2016 using self-designed curriculum.
+This arrangement was successful and \
+is still in place to this day, 
+allowing both the tutors and the company 
+to profit more in the same amount of time.
+\
+\
+Introduced Python classes in 2018 using self-designed curriculum, also successful and ongoing.
+
+***
+    '''
+
 app.layout = html.Div(children=[
-    html.H1('Luke Lopez\'s Expertise', style={'textAlign': 'center'}),
-    dcc.Dropdown(
-        id="dropdown",
-        options=[
-            {'label': 'Languages', 'value': 'L'},
-            {'label': 'Frameworks', 'value': 'F'},
-        ],
-        value=['L', 'F'],
-        multi=True
-    ),
+    html.H1('Luke Lopez'),
+    dcc.Markdown(resume_body),
+    html.H2('Expertise'),
     dcc.Graph(id='graph',
               figure=go.Figure(
                   data=[
@@ -103,6 +127,7 @@ app.layout = html.Div(children=[
                           x=[languages_list[0]],
                           y=[python_kno],
                           name='Python',
+                          text='Tools: </br> PyCharm',
                           marker=go.bar.Marker(
                               color=python_color
                           ),
@@ -112,6 +137,7 @@ app.layout = html.Div(children=[
                           x=[languages_list[1]],
                           y=[java_kno],
                           name='Java',
+                          text='Tools: </br> IntelliJ IDEA </br> Android Studio',
                           marker=go.bar.Marker(
                               color=java_color
                           ),
@@ -121,6 +147,7 @@ app.layout = html.Div(children=[
                           x=[languages_list[2]],
                           y=[html_kno],
                           name='HTML',
+                          text='Tools: </br> Atom',
                           marker=go.bar.Marker(
                               color=html_color
                           ),
@@ -130,6 +157,7 @@ app.layout = html.Div(children=[
                           x=[languages_list[3]],
                           y=[css_kno],
                           name='CSS',
+                          text='Tools: </br> Atom',
                           marker=go.bar.Marker(
                               color=css_color
                           ),
@@ -139,6 +167,7 @@ app.layout = html.Div(children=[
                           x=[languages_list[4]],
                           y=[javascript_kno],
                           name='JavaScript',
+                          text='Tools: </br> Atom',
                           marker=go.bar.Marker(
                               color=javascript_color
                           ),
@@ -197,6 +226,7 @@ app.layout = html.Div(children=[
                       ),
                   ],
                   layout=go.Layout(
+                      title='Languages and Frameworks',
                       barmode='stack',
                       legend=dict(
                           traceorder='grouped',
@@ -205,7 +235,9 @@ app.layout = html.Div(children=[
                   )
               )
               ),
-])
+],
+    style={'textAlign': 'center'}
+)
 
 if __name__ == '__main__':
     app.run_server()
