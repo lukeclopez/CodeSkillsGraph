@@ -100,7 +100,7 @@ app.layout = html.Div(children=[
     dcc.Graph(id='graph',
               figure=go.Figure(
                   data=[
-                      # Languages
+                      # Language
                       go.Bar(
                           x=[languages_list[0]],
                           y=[python_kno],
@@ -108,7 +108,7 @@ app.layout = html.Div(children=[
                       ),
                       # Frameworks
                       go.Bar(
-                          x=languages_list,
+                          x=[languages_list[0]],
                           y=[django_kno],
                           name='Django',
                           marker=go.bar.Marker(
@@ -116,12 +116,62 @@ app.layout = html.Div(children=[
                           ),
                       ),
                       go.Bar(
-                          x=languages_list,
+                          x=[languages_list[0]],
                           y=[flask_kno],
                           name='Flask',
                           marker=go.bar.Marker(
                               color='rgb(58, 7, 2)'
                           ),
+                      ),
+                      go.Bar(
+                          x=[languages_list[0]],
+                          y=[dash_kno],
+                          name='Dash',
+                          marker=go.bar.Marker(
+                              color='rgb(58, 7, 2)'
+                          ),
+                      ),
+                      # Language
+                      go.Bar(
+                          x=[languages_list[1]],
+                          y=[java_kno],
+                          name='Java',
+                      ),
+                      # Frameworks
+                      go.Bar(
+                          x=[languages_list[1]],
+                          y=[libgdx_kno],
+                          name='libGDX',
+                          marker=go.bar.Marker(
+                              color='rgb(58, 128, 2)'
+                          ),
+                      ),
+                      # Language
+                      go.Bar(
+                          x=[languages_list[2]],
+                          y=[html_kno],
+                          name='HTML',
+                      ),
+                      # Language
+                      go.Bar(
+                          x=[languages_list[3]],
+                          y=[css_kno],
+                          name='CSS',
+                      ),
+                      # Frameworks
+                      go.Bar(
+                          x=[languages_list[3]],
+                          y=[materialize_kno],
+                          name='Materialize',
+                          marker=go.bar.Marker(
+                              color='rgb(58, 128, 2)'
+                          ),
+                      ),
+                      # Language
+                      go.Bar(
+                          x=[languages_list[4]],
+                          y=[javascript_kno],
+                          name='JavaScript',
                       ),
 
                   ],
