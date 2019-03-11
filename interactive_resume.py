@@ -182,7 +182,7 @@ app.layout = html.Div(children=[
                   ],
                   layout=go.Layout(
                       xaxis=dict(
-                          title="Languages"
+                          title="Language or Framework"
                       ),
                       yaxis=dict(
                           title="Skill Level"
