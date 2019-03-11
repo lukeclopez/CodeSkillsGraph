@@ -40,7 +40,7 @@ fram_kno_y = [django_kno, flask_kno, dash_kno, libgdx_kno, materialize_kno]
 
 resume_body = \
     r'''
-[Github](https://github.com/bridsoukou)
+[Github](https://github.com/lukeclopez)
 
 * Focused, driven, and eager to take on a challenge.  
 * Looking to turn my passion for coding into a career.   
@@ -134,7 +134,7 @@ app.layout = html.Div(children=[
                           y=[django_kno],
                           name='Django',
                           marker=go.bar.Marker(
-                              color='rgb(58, 70, 2)'
+                              color='rgb(79, 15, 99)'
                           ),
                           legendgroup="frameworks",
                           width=0.5,
@@ -181,6 +181,12 @@ app.layout = html.Div(children=[
                       ),
                   ],
                   layout=go.Layout(
+                      xaxis=dict(
+                          title="Languages"
+                      ),
+                      yaxis=dict(
+                          title="Skill Level"
+                      ),
                       title='Languages and Frameworks',
                       barmode='stack',
                       legend=dict(
