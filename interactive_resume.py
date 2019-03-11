@@ -22,52 +22,6 @@ html_color = "rgb(241, 91, 15)"
 css_color = "rgb(15, 146, 240)"
 javascript_color = "rgb(238, 242, 16)"
 
-python_dict = {
-    "name": "Python",
-    "kno": 7,
-    "color": python_color,
-    "frw": [
-        {"name": "Django",
-         "kno": 3},
-        {"name": "Flask",
-         "kno": 2},
-        {"name": "Dash",
-         "kno": 1},
-    ]
-}
-
-java_dict = {
-    "name": "Java",
-    "kno": 5,
-    "color": java_color,
-    "frw": [
-        {"name": "libGDX",
-         "kno": 4},
-    ]
-}
-
-html_dict = {
-    "name": "Python",
-    "kno": 4,
-    "color": html_color,
-}
-
-css_dict = {
-    "name": "Python",
-    "kno": 3,
-    "color": css_color,
-    "frw": [
-        {"name": "Materialize",
-         "kno": 7},
-    ]
-}
-
-javascript_dict = {
-    "name": "Python",
-    "kno": 1,
-    "color": javascript_color,
-}
-
 python_kno = 7
 java_kno = 5
 html_kno = 4
@@ -111,14 +65,15 @@ to profit more in the same amount of time.
 \
 \
 Introduced Python classes in 2018 using self-designed curriculum, also successful and ongoing.
-
-***
     '''
 
 app.layout = html.Div(children=[
     html.H1('Luke Lopez'),
     dcc.Markdown(resume_body),
     html.H2('Expertise'),
+    dcc.Markdown([
+        "***"
+    ]),
     dcc.Graph(id='graph',
               figure=go.Figure(
                   data=[
