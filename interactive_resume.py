@@ -5,22 +5,17 @@ import plotly.graph_objs as go
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-# TODO: Put this all in dictionaries, one for each language
-languages_list = ["Python", "Java", "HTML", "CSS", "Javascript"]
-frameworks_list = ["Django", "Flask", "Dash", "libGDX", "Materialize"]
+languages_list = ['Python', 'Java', 'HTML', 'CSS', 'Javascript']
+frameworks_list = ['Django', 'Flask', 'Dash', 'libGDX', 'Materialize']
 
-python_color = "rgb(65, 85, 117)"
-java_color = "rgb(232, 156, 51)"
-html_color = "rgb(241, 91, 15)"
-css_color = "rgb(15, 146, 240)"
-javascript_color = "rgb(238, 242, 16)"
+python_color = 'rgb(65, 85, 117)'
+java_color = 'rgb(232, 156, 51)'
+html_color = 'rgb(241, 91, 15)'
+css_color = 'rgb(15, 146, 240)'
+javascript_color = 'rgb(238, 242, 16)'
 
 python_kno = 7
 java_kno = 5
@@ -38,42 +33,7 @@ lang_kno_y = [python_kno, java_kno, html_kno, css_kno, javascript_kno]
 
 fram_kno_y = [django_kno, flask_kno, dash_kno, libgdx_kno, materialize_kno]
 
-resume_body = \
-    r'''
-[Github](https://github.com/lukeclopez)
-
-* Focused, driven, and eager to take on a challenge.  
-* Looking to turn my passion for coding into a career.   
-* Making complicated ideas understandable is my superpower.   
-
-## Experience
-***
-#### Private Tutor
-2015 - Present
- 
-##### Subjects:
-Python, Chess, Spanish, English
- 
-##### Achievements:
-
-Proposed and piloted group classes for the company \
-in 2016 using self-designed curriculum.
-This arrangement was successful and \
-is still in place to this day, 
-allowing both the tutors and the company 
-to profit more in the same amount of time.
-\
-\
-Introduced Python classes in 2018 using self-designed curriculum, also successful and ongoing.
-    '''
-
 app.layout = html.Div(children=[
-    html.H1('Luke Lopez'),
-    dcc.Markdown(resume_body),
-    html.H2('Expertise'),
-    dcc.Markdown([
-        "***"
-    ]),
     dcc.Graph(id='graph',
               figure=go.Figure(
                   data=[
@@ -86,7 +46,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=python_color
                           ),
-                          legendgroup="languages",
+                          legendgroup='languages',
                       ),
                       go.Bar(
                           x=[languages_list[1]],
@@ -96,7 +56,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=java_color
                           ),
-                          legendgroup="languages",
+                          legendgroup='languages',
                       ),
                       go.Bar(
                           x=[languages_list[2]],
@@ -106,7 +66,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=html_color
                           ),
-                          legendgroup="languages",
+                          legendgroup='languages',
                       ),
                       go.Bar(
                           x=[languages_list[3]],
@@ -116,7 +76,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=css_color
                           ),
-                          legendgroup="languages",
+                          legendgroup='languages',
                       ),
                       go.Bar(
                           x=[languages_list[4]],
@@ -126,7 +86,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color=javascript_color
                           ),
-                          legendgroup="languages",
+                          legendgroup='languages',
                       ),
                       # Frameworks
                       go.Bar(
@@ -136,7 +96,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(79, 15, 99)'
                           ),
-                          legendgroup="frameworks",
+                          legendgroup='frameworks',
                           width=0.5,
                       ),
                       go.Bar(
@@ -146,7 +106,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(15, 82, 191)'
                           ),
-                          legendgroup="frameworks",
+                          legendgroup='frameworks',
                           width=0.5,
                       ),
                       go.Bar(
@@ -156,7 +116,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(58, 7, 120)'
                           ),
-                          legendgroup="frameworks",
+                          legendgroup='frameworks',
                           width=0.5,
                       ),
                       go.Bar(
@@ -166,7 +126,7 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(58, 128, 2)'
                           ),
-                          legendgroup="frameworks",
+                          legendgroup='frameworks',
                           width=0.5,
                       ),
                       go.Bar(
@@ -176,16 +136,16 @@ app.layout = html.Div(children=[
                           marker=go.bar.Marker(
                               color='rgb(191, 23, 15)'
                           ),
-                          legendgroup="frameworks",
+                          legendgroup='frameworks',
                           width=0.5,
                       ),
                   ],
                   layout=go.Layout(
                       xaxis=dict(
-                          title="Language or Framework"
+                          title='Language or Framework'
                       ),
                       yaxis=dict(
-                          title="Skill Level"
+                          title='Skill Level'
                       ),
                       title='Languages and Frameworks',
                       barmode='stack',
