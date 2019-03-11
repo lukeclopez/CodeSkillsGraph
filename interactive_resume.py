@@ -144,7 +144,7 @@ app.layout = html.Div(children=[
                           y=[flask_kno],
                           name='Flask',
                           marker=go.bar.Marker(
-                              color='rgb(58, 7, 2)'
+                              color='rgb(15, 82, 191)'
                           ),
                           legendgroup="frameworks",
                           width=0.5,
@@ -174,7 +174,7 @@ app.layout = html.Div(children=[
                           y=[materialize_kno],
                           name='Materialize',
                           marker=go.bar.Marker(
-                              color='rgb(58, 128, 2)'
+                              color='rgb(191, 23, 15)'
                           ),
                           legendgroup="frameworks",
                           width=0.5,
